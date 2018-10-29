@@ -12,9 +12,12 @@ namespace Democracy.Models
         public int StateId { get; set; }
 
         [Required(ErrorMessage = "The field {0} is required")]
+        [Display(Name = "State description")]
         [StringLength(30, ErrorMessage = "The field {0} can contain maximum {1} and minimum {2} characters", MinimumLength =3)]
         public string Description { get; set; }
 
-        
+        public virtual ICollection<Voting> Votings { get; set; }
+
+
     }
 }

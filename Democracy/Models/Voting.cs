@@ -12,6 +12,7 @@ namespace Democracy.Models
         public int VotingId { get; set; }
 
         [Required(ErrorMessage = "The field {0} is required")]
+        [Display(Name = "Voting description")]
         [StringLength(30, ErrorMessage = "The field {0} can contain maximum {1} and minimum {2} characters", MinimumLength = 3)]
         public string Description { get; set; }
 
@@ -47,8 +48,9 @@ namespace Democracy.Models
         [Display(Name = "Quantity blank votes")]
         public int QuantityBlankVotes { get; set; }
 
-        [Display(Name = "Candidate win")]
+        [Display(Name = "Winner")]
         public string CandidateWin { get; set; }
 
+        public virtual State State{ get; set; }
     }
 }
