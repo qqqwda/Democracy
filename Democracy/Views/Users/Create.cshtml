@@ -1,13 +1,14 @@
-﻿@model Democracy.Models.User
+﻿@model Democracy.Models.UserView
 
 @{
     ViewBag.Title = "Create";
 }
 
 <h2>Create</h2>
+<h3>@ViewBag.Error</h3>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Users",FormMethod.Post, new { enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
     

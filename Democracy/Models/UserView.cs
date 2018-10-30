@@ -10,8 +10,7 @@ namespace Democracy.Models
     [NotMapped]
     public class UserView
     {
-        [Key]
-        public int UserId { get; set; }
+        
 
         [Required(ErrorMessage = "The field {0} is required")]
         [Display(Name = "Email")]
